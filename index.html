@@ -157,16 +157,47 @@
                     <div class="w-10 h-1 bg-accent"></div>
                     <h2 class="text-3xl md:text-4xl font-bold text-darktext tracking-tight">Sambutan Kepala Sekolah</h2>
                 </div>
-                <p class="text-primary font-medium italic mb-6">Assalamu’alaikum warahmatullahi wabarakatuh. Salam sejahtera bagi kita semua.</p>
-                <p class="text-gray-600 leading-relaxed mb-4 text-justify">
-                    Kami memiliki visi besar yaitu <strong>“Menjadi Sekolah yang Unggul, Berkarakter, Berwawasan Lingkungan dan Religius.”</strong> Visi ini bukan sekadar kalimat, tetapi arah untuk mencetak generasi yang kompeten secara ilmu, berkarakter kuat, peduli lingkungan, dan berlandaskan keimanan.
-                </p>
-                <p class="text-gray-600 leading-relaxed mb-8 text-justify">
-                    Melalui pendidikan berbasis taruna, kami berkomitmen mengembangkan potensi peserta didik menjadi pribadi yang disiplin, bertanggung jawab, dan mandiri. Manfaatkan setiap kesempatan, hirup setiap ilmu, dan jangan pernah berhenti bermimpi.
-                </p>
-                <div>
-                    <h4 class="font-bold text-primary text-xl">Bpk Wahyu Utomo, S.E</h4>
-                    <p class="text-sm text-gray-500 font-medium">Kepala SMK Al Muttaqin</p>
+                
+                <div class="h-[350px] overflow-y-auto pr-4 mb-6 custom-scrollbar text-gray-600 text-sm md:text-base leading-relaxed text-justify space-y-4">
+                    <p class="text-primary font-medium italic">
+                        Assalamu’alaikum warahmatullahi wabarakatuh,<br>
+                        Salam sejahtera bagi kita semua,
+                    </p>
+                    
+                    <p>Yang saya hormati, seluruh dewan guru, staf tenaga kependidikan, para tamu undangan, serta Taruna/i peserta didik yang saya banggakan.</p>
+                    
+                    <p>Pertama-tama marilah kita panjatkan puji syukur ke hadirat Allah SWT, Tuhan Yang Maha Esa, atas limpahan rahmat dan karunia-Nya sehingga kita dapat berkumpul dalam kesempatan yang baik ini.</p>
+                    
+                    <p>Bapak/Ibu serta Taruna/i yang saya hormati,<br>
+                    SMK kita memiliki visi besar yaitu <span class="font-bold italic text-primary">“Menjadi Sekolah yang Unggul, Berkarakter, Berwawasan Lingkungan dan Religius.”</span></p>
+                    
+                    <p>Visi ini bukan hanya sebuah rangkaian kalimat, tetapi merupakan arah dan tujuan yang ingin kita wujudkan bersama—bahwa sekolah ini harus menjadi tempat terbaik untuk mencetak generasi masa depan yang tidak hanya kompeten secara ilmu, tetapi juga kuat karakter, peduli lingkungan, dan berlandaskan nilai-nilai moral serta keimanan.</p>
+                    
+                    <p>Dalam rangka mewujudkan visi tersebut, sekolah ini memiliki misi yang kita pegang teguh.</p>
+                    
+                    <p><span class="font-semibold text-darktext">Pertama</span>, menghadirkan lingkungan pendidikan yang kondusif, nyaman, dan profesional agar dapat melahirkan lulusan yang berkualitas dan siap bersaing di era perkembangan IPTEK yang semakin pesat. Kita ingin memastikan bahwa setiap peserta didik memiliki keterampilan yang relevan, dapat diandalkan, dan mampu bersaing di dunia kerja maupun dunia wirausaha.</p>
+                    
+                    <p><span class="font-semibold text-darktext">Kedua</span>, kita berkomitmen mengembangkan potensi peserta didik menjadi pribadi yang disiplin, bertanggung jawab, dan mandiri. Karakter-karakter inilah yang akan menjadi fondasi kuat bagi mereka untuk menghadapi tantangan kehidupan ke depan.</p>
+                    
+                    <p><span class="font-semibold text-darktext">Ketiga</span>, kita terus berupaya menciptakan sekolah yang berwawasan lingkungan—lingkungan yang bersih, tertata, sejuk, dan asri. Karena kami percaya bahwa suasana belajar yang nyaman akan membentuk pola pikir positif dan membangun kesadaran peserta didik untuk mencintai bumi dan lingkungan sekitarnya.</p>
+                    
+                    <p><span class="font-semibold text-darktext">Dan yang tidak kalah penting</span>, kita menanamkan nilai-nilai religius, meningkatkan iman dan taqwa kepada Tuhan Yang Maha Esa, serta membentuk akhlak yang mulia. Ilmu tanpa akhlak tidak akan membawa manfaat, namun ilmu yang dibingkai dengan moral akan melahirkan generasi yang menjadi kebanggaan bangsa.</p>
+                    
+                    <p>Taruna/i yang saya cintai,<br>
+                    Kalian adalah generasi yang akan menentukan masa depan bangsa. Sekolah ini hadir untuk memberikan tempat terbaik bagi kalian berkembang, belajar, dan membentuk jati diri. Manfaatkan setiap kesempatan, hirup setiap ilmu, dan jangan pernah berhenti bermimpi serta berusaha.</p>
+                    
+                    <p>Akhir kata, mari kita bersama-sama—guru, staf, orang tua, dan peserta didik—membangun sekolah ini menjadi lembaga pendidikan yang unggul dan mampu mencetak generasi yang berkarakter, cerdas, dan bertaqwa.</p>
+                    
+                    <p class="text-primary font-medium italic mt-6">
+                        Wassalamu’alaikum warahmatullahi wabarakatuh.
+                    </p>
+                </div>
+                
+                <div class="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bold text-primary text-xl">Bpk Wahyu Utomo, S.E</h4>
+                        <p class="text-sm text-gray-500 font-medium">Kepala SMK Al Muttaqin</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -433,10 +464,18 @@
                     menuMobile.classList.toggle('hidden');
                 });
             }
-
+// Custom Scrollbar Style Injector untuk box sambutan
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+                .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
+                .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+                .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+            `;
+            document.head.appendChild(style);
             // BOS: JANGAN LUPA GANTI ID SPREADSHEET DAN API URL INI NANTI DENGAN MILIK SMK AL MUTTAQIN!
-            const BASE_API_URL = 'https://script.google.com/macros/s/AKfycbyOgCidAVWi8PnKS2vJ7yfNizYVPVy5QtULRg7a35CYlqJIY2spc805j7QFhpZ6E9la-w/exec';
-            const SPREADSHEET_ID = '1d10RCbl9dByMyzlufceWetDvE9WlEiyVDD20wMxzwPs';
+            const BASE_API_URL = 'https://script.google.com/macros/s/AKfycbwZ725sYtPSWkfpmGYhjOJujulPvoYNBHYylh87M4T6KJuWGRBtaM25C_brTqxcbttehg/exec';
+            const SPREADSHEET_ID = '1lBKfUdhNqfC4G-ITNt9ecPAoi-BX_mZP2gLAvxxAxDY';
 
             async function gvizFetch(sheetName) {
                 try {
