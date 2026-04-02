@@ -367,7 +367,6 @@
                         <li><a href="#sambutan" class="hover:text-accent transition flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-gray-600"></i> Profil</a></li>
                         <li><a href="#jurusan" class="hover:text-accent transition flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-gray-600"></i> Jurusan</a></li>
                         <li><a href="#pengumuman" class="hover:text-accent transition flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-gray-600"></i> Pengumuman</a></li>
-                        <li class="col-span-2 mt-1"><a href="https://sites.google.com/view/perpustakaan-almuttaqin" target="_blank" class="hover:text-accent transition flex items-center gap-2"><i class="fas fa-book-reader text-accent mr-1"></i> Kunjungi Pojok Baca</a></li>
                     </ul>
                 </div>
 
@@ -644,12 +643,19 @@
                             const targetAttr = (linkTujuan.startsWith('http')) ? 'target="_blank"' : '';
                             
                             const cardHTML = `
-                            <a href="${linkTujuan}" ${targetAttr} class="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group h-64 cursor-pointer block">
-                                <img src="${fotoFasilitas}" alt="Fasilitas ${item.Nama}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end">
-                                    <span class="text-accent text-[11px] font-bold mb-1 uppercase tracking-widest">Fasilitas</span>
-                                    <h3 class="text-white text-xl font-bold leading-tight group-hover:text-accent transition-colors">${item.Nama || "Area Sekolah"}</h3>
+                            <a href="${linkTujuan}" ${targetAttr} class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer block border border-gray-100 flex flex-col h-full">
+                                <div class="w-full h-40 overflow-hidden">
+                                    <img src="${fotoFasilitas}" alt="Fasilitas ${item.Nama}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                </div>
+                                
+                                <div class="p-5 flex flex-col gap-1 flex-grow">
+                                    <span class="text-primary text-[10px] font-bold uppercase tracking-widest">Fasilitas</span>
+                                    <h3 class="text-darktext text-lg font-semibold leading-tight group-hover:text-primary transition-colors line-clamp-2">${item.Nama || "Area Sekolah"}</h3>
+                                    ${item.Deskripsi ? `<p class="text-gray-500 text-xs mt-1 line-clamp-2">${item.Deskripsi}</p>` : ''}
+                                </div>
+                                
+                                <div class="px-5 pb-5 mt-auto">
+                                   <span class="text-primary text-xs font-bold flex items-center gap-2">Lihat Detail <i class="fas fa-arrow-right text-[10px]"></i></span>
                                 </div>
                             </a>`;
                             container.innerHTML += cardHTML;
