@@ -437,22 +437,6 @@
         </div>
     </footer>
 
-    <div id="pdf-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 md:p-10 transition-opacity">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-5xl h-[85vh] flex flex-col overflow-hidden relative transform scale-95 transition-transform duration-300" id="pdf-modal-content">
-            <div class="flex justify-between items-center bg-primary text-white px-6 py-4 shadow-md z-10">
-                <h3 class="font-bold text-lg flex items-center gap-2"><i class="far fa-file-pdf"></i> Pratinjau Pengumuman</h3>
-                <button onclick="closePdfModal()" aria-label="Tutup" class="text-white hover:text-red-300 transition text-3xl leading-none">&times;</button>
-            </div>
-            <div class="flex-grow w-full h-full bg-gray-200 relative">
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400">
-                    <i class="fas fa-spinner fa-spin text-4xl mb-3"></i>
-                    <p class="text-sm font-medium">Memuat dokumen...</p>
-                </div>
-                <iframe id="pdf-iframe" title="PDF Viewer" class="w-full h-full relative z-10" src="" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             
@@ -519,30 +503,24 @@
                     if (result.status === "success") {
                         container.innerHTML = ''; 
                         result.data.forEach(item => {
-                            // Cek apakah ada link PDF/Gambar yang diinputkan (Asumsi kolom 'Link PDF' dipakai untuk menaruh link Foto Poster/Galeri)
-                            // Jika kosong, berikan gambar default/placeholder.
+                            // Murni mengambil gambar dari kolom "Link PDF" (Jika bos memasukkan link gambar ke situ) atau "Foto" atau "Link"
+                            // Jika kosong semua, pakai gambar placeholder kegiatan sekolah
                             const imgUrl = item['Link PDF'] || item.Foto || item.Link || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop'; 
                             
                             const cardHTML = `
-                            <div class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-full cursor-pointer" onclick="openPdfModal('${imgUrl}')">
+                            <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
                                 
                                 <div class="relative h-64 md:h-56 w-full overflow-hidden bg-gray-100">
-                                    <img src="${imgUrl}" alt="${item.Judul}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <img src="${imgUrl}" alt="${item.Judul || 'Pengumuman'}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                                     
-                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                        <div class="bg-white/20 backdrop-blur-sm text-white w-12 h-12 rounded-full flex items-center justify-center border border-white/50 shadow-lg">
-                                            <i class="fas fa-search-plus text-xl"></i>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-primary px-3 py-1 rounded-md text-xs font-bold shadow-sm flex items-center gap-1.5">
+                                    <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-sm text-primary px-3 py-1 rounded text-xs font-bold shadow-sm flex items-center gap-1.5">
                                         <i class="far fa-calendar-alt"></i> ${item.Tanggal || '-'}
                                     </div>
                                 </div>
                                 
-                                <div class="p-5 flex flex-col flex-grow bg-white relative z-10 border-t-2 border-accent group-hover:bg-green-50 transition-colors">
-                                    <h3 class="text-lg font-bold text-darktext leading-snug mb-2 line-clamp-2">${item.Judul}</h3>
-                                    <p class="text-[13px] text-gray-500 flex-grow line-clamp-2">${item.Ringkasan || 'Klik gambar untuk melihat resolusi penuh.'}</p>
+                                <div class="p-5 flex flex-col flex-grow bg-white border-t-4 border-accent">
+                                    <h3 class="text-lg font-bold text-darktext leading-snug mb-2 line-clamp-2">${item.Judul || 'Informasi Terbaru'}</h3>
+                                    <p class="text-[13px] text-gray-500 flex-grow line-clamp-3">${item.Ringkasan || 'Tidak ada deskripsi tambahan.'}</p>
                                 </div>
                                 
                             </div>`;
@@ -553,34 +531,6 @@
                     }
                 } catch (e) { console.log("Error Pengumuman:", e); }
             }
-            window.openPdfModal = function(url) {
-                const modal = document.getElementById('pdf-modal');
-                const iframe = document.getElementById('pdf-iframe');
-                const content = document.getElementById('pdf-modal-content');
-                let finalUrl = url;
-                if (url.includes('drive.google.com') && url.includes('/view')) {
-                    finalUrl = url.replace(/\/view.*/, '/preview');
-                }
-                iframe.src = finalUrl;
-                modal.classList.remove('hidden');
-                setTimeout(() => {
-                    content.classList.remove('scale-95');
-                    content.classList.add('scale-100');
-                }, 10);
-            };
-
-            window.closePdfModal = function() {
-                const modal = document.getElementById('pdf-modal');
-                const iframe = document.getElementById('pdf-iframe');
-                const content = document.getElementById('pdf-modal-content');
-                content.classList.remove('scale-100');
-                content.classList.add('scale-95');
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                    iframe.src = ''; 
-                }, 300);
-            };
-
             async function loadBeritaUtama() {
                 const container = document.getElementById('api-berita-utama');
                 if (!container) return;
