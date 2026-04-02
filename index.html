@@ -86,10 +86,22 @@
             </button>
             
             <div class="hidden lg:flex gap-7 text-[15px] font-medium text-gray-600 items-center">
-                <a href="index.html" class="text-primary border-b-2 border-primary pb-1">Beranda</a>
-                <a href="#sambutan" class="hover:text-primary transition flex items-center gap-1">Profil Sekolah</a>
-                <a href="#jurusan" class="hover:text-primary transition flex items-center gap-1">Program Studi</a>
-                <a href="#pengumuman" class="hover:text-primary transition flex items-center gap-1">Pengumuman </a>
+                <a href="index.html" class="hover:text-primary transition flex items-center gap-1">Beranda</a>
+                
+                <a href="dokumen.html" class="text-primary border-b-2 border-primary pb-1 flex items-center gap-1">Kegiatan</a>
+                
+                <div class="relative group py-2">
+                    <button class="hover:text-primary transition flex items-center gap-1.5 focus:outline-none">
+                        Tentang Kami <i class="fas fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    
+                    <div class="absolute left-0 top-full mt-0 w-48 bg-white border border-gray-100 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 flex flex-col py-2">
+                        <a href="profil.html" class="px-5 py-2.5 hover:bg-green-50 hover:text-primary transition text-sm">Profil Sekolah</a>
+                        <a href="visi-misi.html" class="px-5 py-2.5 hover:bg-green-50 hover:text-primary transition text-sm">Visi dan Misi</a>
+                        <a href="prody.html" class="px-5 py-2.5 hover:bg-green-50 hover:text-primary transition text-sm">Program Study</a>
+                        <a href="guru.html" class="px-5 py-2.5 hover:bg-green-50 hover:text-primary transition text-sm">Guru SMK</a>
+                    </div>
+                </div>
             </div>
             
             <div class="hidden lg:flex gap-3">
@@ -99,17 +111,28 @@
         </div>
 
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 flex flex-col font-medium text-gray-600">
-            <a href="index.html" class="px-6 py-4 border-b border-gray-50 text-primary bg-green-50">Beranda</a>
-            <a href="#sambutan" class="px-6 py-4 border-b border-gray-50 hover:bg-gray-50 hover:text-primary">Profil Sekolah</a>
-            <a href="#jurusan" class="px-6 py-4 border-b border-gray-50 hover:bg-gray-50 hover:text-primary">Program Studi</a>
-            <a href="#pengumuman" class="px-6 py-4 border-b border-gray-50 hover:bg-gray-50 hover:text-primary">Pengumuman</a>
-            <div class="px-6 py-4 flex flex-col gap-3 bg-gray-50">
+            <a href="index.html" class="px-6 py-4 border-b border-gray-50 hover:bg-gray-50 hover:text-primary transition">Beranda</a>
+            <a href="dokumen.html" class="px-6 py-4 border-b border-gray-50 text-primary bg-green-50 transition">Kegiatan</a>
+            
+            <div class="border-b border-gray-50">
+                <div class="px-6 py-4 flex justify-between items-center text-gray-600 bg-gray-50/50">
+                    <span>Tentang Kami</span>
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </div>
+                <div class="flex flex-col bg-gray-50/80 border-t border-gray-100">
+                    <a href="profil.html" class="px-10 py-3 border-b border-gray-100 hover:text-primary text-sm transition"><i class="fas fa-angle-right text-[10px] mr-2 text-primary"></i>Profil Sekolah</a>
+                    <a href="visi-misi.html" class="px-10 py-3 border-b border-gray-100 hover:text-primary text-sm transition"><i class="fas fa-angle-right text-[10px] mr-2 text-primary"></i>Visi dan Misi</a>
+                    <a href="prody.html" class="px-10 py-3 border-b border-gray-100 hover:text-primary text-sm transition"><i class="fas fa-angle-right text-[10px] mr-2 text-primary"></i>Program Study</a>
+                    <a href="guru.html" class="px-10 py-3 hover:text-primary text-sm transition"><i class="fas fa-angle-right text-[10px] mr-2 text-primary"></i>Guru SMK</a>
+                </div>
+            </div>
+            
+            <div class="px-6 py-5 flex flex-col gap-3 bg-gray-50 border-t border-gray-200">
                 <a href="#" class="bg-accent text-darktext px-5 py-2.5 rounded-lg text-sm font-bold text-center shadow-sm">Info PPDB</a>
                 <a href="admin.html" class="border-2 border-primary text-primary px-5 py-2.5 rounded-lg text-sm font-bold text-center"><i class="fas fa-sign-in-alt mr-2"></i>Log in</a>
             </div>
         </div>
     </nav>
-
     <section class="relative bg-cover bg-center bg-gray-800" style="background-image: url('https://ik.imagekit.io/maihfdgfn5/gambar%20bg.jpg');">
         <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-primary/95"></div>
         <div class="relative z-10 max-w-[1200px] mx-auto px-4 pt-20 pb-28 flex flex-col lg:flex-row gap-10 items-center">
