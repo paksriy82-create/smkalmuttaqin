@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK AL MUTTAQIN - Sekolah Berbasis Taruna</title>
+    <meta name="description" content="Website Resmi SMK Al Muttaqin Tulang Bawang. Menjadi Sekolah yang Unggul, Berkarakter, Berwawasan Lingkungan dan Religius.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a',    // Biru Navy (Khas Taruna)
+                        secondary: '#3b82f6',  // Biru Terang
+                        accent: '#f59e0b',     // Emas / Gold
+                        darktext: '#0f172a'    // Slate 900
+                    },
+                    fontFamily: { 
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-slate-700 font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+
+    <div id="preloader" class="fixed inset-0 z-[99999] bg-primary flex flex-col items-center justify-center transition-opacity duration-500">
+        <div class="bg-white p-4 rounded-full mb-5 shadow-2xl animate-pulse">
+            <i class="fas fa-anchor text-5xl text-primary"></i>
+        </div>
+        <h2 class="text-white text-2xl font-bold tracking-widest mb-3 drop-shadow-md">SMK AL MUTTAQIN</h2>
+        <div class="flex gap-3 mb-6">
+            <div class="w-3 h-3 bg-accent rounded-full animate-bounce"></div>
+            <div class="w-3 h-3 bg-accent rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+            <div class="w-3 h-3 bg-accent rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
+        </div>
+    </div>
+    
+    <script>
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => { preloader.style.display = 'none'; }, 500);
+        });
+    </script>
+
+    <div class="bg-primary text-white text-xs py-2.5 px-6 flex justify-between items-center hidden lg:flex border-b border-blue-900">
+        <div class="flex gap-6 items-center max-w-[1200px] mx-auto w-full">
+            <span class="flex items-center gap-2"><i class="fas fa-phone-alt text-accent"></i> 0821-8344-6488</span>
+            <a href="mailto:smkalmuttaqin34@gmail.com" class="hover:text-accent transition flex items-center gap-2"><i class="far fa-envelope text-accent"></i> smkalmuttaqin34@gmail.com</a>
+            <span class="flex items-center gap-2 ml-auto"><i class="fas fa-map-marker-alt text-accent"></i> Dente Teladas, Tulang Bawang</span>
+        </div>
+    </div>
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-[1200px] mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white text-xl shadow-md"><i class="fas fa-graduation-cap"></i></div>
+                <div>
+                    <h1 class="font-extrabold text-xl text-primary leading-none tracking-tight">SMK AL MUTTAQIN</h1>
+                    <p class="text-[10px] font-bold text-accent tracking-widest uppercase">Berbasis Taruna</p>
+                </div>
+            </a>
+            
+            <button id="mobile-menu-btn" class="lg:hidden text-primary text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
+            
+            <div class="hidden lg:flex gap-7 text-[14px] font-semibold text-slate-600 items-center">
+                <a href="#" class="text-primary border-b-2 border-primary pb-1">Beranda</a>
+                <a href="#profil" class="hover:text-primary transition">Profil & Sejarah</a>
+                <a href="#jurusan" class="hover:text-primary transition">Program Studi</a>
+                <a href="#taruna" class="hover:text-primary transition">Taruna Taruni</a>
+                <a href="#kegiatan" class="hover:text-primary transition">Galeri Kegiatan</a>
+                <a href="#" class="bg-accent text-primary px-5 py-2.5 rounded-lg font-bold hover:bg-yellow-400 transition shadow-sm">Info PPDB</a>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 flex flex-col font-medium text-slate-600">
+            <a href="#" class="px-6 py-4 border-b border-gray-50 text-primary bg-blue-50">Beranda</a>
+            <a href="#profil" class="px-6 py-4 border-b border-gray-50 hover:bg-blue-50 hover:text-primary">Profil & Sejarah</a>
+            <a href="#jurusan" class="px-6 py-4 border-b border-gray-50 hover:bg-blue-50 hover:text-primary">Program Studi</a>
+            <a href="#taruna" class="px-6 py-4 border-b border-gray-50 hover:bg-blue-50 hover:text-primary">Taruna Taruni</a>
+            <a href="#kegiatan" class="px-6 py-4 border-b border-gray-50 hover:bg-blue-50 hover:text-primary">Galeri Kegiatan</a>
+            <div class="px-6 py-4 bg-gray-50">
+                <a href="#" class="block bg-accent text-primary px-5 py-3 rounded-lg font-bold text-center shadow-md">Info PPDB</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative bg-cover bg-center bg-slate-900" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-primary/80 to-transparent"></div>
+        <div class="relative z-10 max-w-[1200px] mx-auto px-4 pt-24 pb-32 flex flex-col lg:flex-row items-center">
+            <div class="lg:w-2/3 w-full text-center lg:text-left">
+                <span class="inline-block bg-accent text-primary text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Sekolah Menengah Kejuruan</span>
+                <h1 class="text-white text-4xl md:text-6xl font-extrabold mb-4 leading-tight font-serif">Selamat Datang di <br><span class="text-accent">SMK AL MUTTAQIN</span></h1>
+                <p class="text-blue-100 text-lg md:text-xl mb-8 max-w-2xl font-light leading-relaxed mx-auto lg:mx-0">
+                    "Menjadi Sekolah yang Unggul, Berkarakter, Berwawasan Lingkungan dan Religius."
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#profil" class="bg-primary hover:bg-blue-800 border border-blue-500 text-white px-8 py-3.5 rounded-lg font-bold transition shadow-lg flex items-center justify-center gap-2">
+                        <i class="fas fa-info-circle"></i> Tentang Kami
+                    </a>
+                    <a href="#" class="bg-white hover:bg-gray-100 text-primary px-8 py-3.5 rounded-lg font-bold transition shadow-lg flex items-center justify-center gap-2">
+                        <i class="fas fa-user-plus"></i> Pendaftaran PPDB
+                    </a>
+                </div>
+
+                <div class="flex gap-6 mt-12 justify-center lg:justify-start">
+                    <div class="text-center lg:text-left">
+                        <h3 class="text-3xl font-bold text-accent">2</h3>
+                        <p class="text-xs text-blue-200 uppercase tracking-widest mt-1">Jurusan</p>
+                    </div>
+                    <div class="w-px bg-white/20"></div>
+                    <div class="text-center lg:text-left">
+                        <h3 class="text-3xl font-bold text-accent">2008</h3>
+                        <p class="text-xs text-blue-200 uppercase tracking-widest mt-1">Tahun Berdiri</p>
+                    </div>
+                    <div class="w-px bg-white/20"></div>
+                    <div class="text-center lg:text-left">
+                        <h3 class="text-3xl font-bold text-accent">C</h3>
+                        <p class="text-xs text-blue-200 uppercase tracking-widest mt-1">Akreditasi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+            <svg class="relative block w-full h-[50px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#f8fafc"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section id="profil" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 flex flex-col md:flex-row">
+                <div class="md:w-2/5 bg-primary relative min-h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1558021211-6d1403321394?q=80&w=800&auto=format&fit=crop" alt="Kepala Sekolah" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 text-white">
+                        <div class="bg-accent w-12 h-1 mb-4"></div>
+                        <h2 class="text-2xl font-bold font-serif mb-1">Bpk Wahyu Utomo, S.E</h2>
+                        <p class="text-blue-200 text-sm tracking-wide">Kepala Sekolah SMK Al Muttaqin</p>
+                    </div>
+                </div>
+                <div class="md:w-3/5 p-8 md:p-12 relative">
+                    <i class="fas fa-quote-right absolute top-8 right-10 text-6xl text-gray-100"></i>
+                    <h3 class="text-2xl font-bold text-primary mb-6 relative z-10">Sambutan Kepala Sekolah</h3>
+                    <div class="prose prose-sm md:prose-base text-slate-600 text-justify relative z-10 h-64 overflow-y-auto pr-4 custom-scrollbar">
+                        <p class="italic mb-4 font-medium text-slate-700">Assalamu’alaikum warahmatullahi wabarakatuh, <br>Salam sejahtera bagi kita semua,</p>
+                        <p>Yang saya hormati, seluruh dewan guru, staf tenaga kependidikan, para tamu undangan, serta Taruna/i peserta didik yang saya banggakan. Pertama-tama marilah kita panjatkan puji syukur ke hadirat Allah SWT, Tuhan Yang Maha Esa, atas limpahan rahmat dan karunia-Nya.</p>
+                        <p>SMK kita memiliki visi besar yaitu <strong>“Menjadi Sekolah yang Unggul, Berkarakter, Berwawasan Lingkungan dan Religius.”</strong> Visi ini merupakan arah dan tujuan yang ingin kita wujudkan bersama—bahwa sekolah ini harus menjadi tempat terbaik untuk mencetak generasi masa depan yang tidak hanya kompeten secara ilmu, tetapi juga kuat karakter, peduli lingkungan, dan berlandaskan keimanan.</p>
+                        <p>Kita berkomitmen mengembangkan potensi peserta didik menjadi pribadi yang disiplin, bertanggung jawab, dan mandiri. Karakter-karakter inilah yang akan menjadi fondasi kuat bagi mereka untuk menghadapi tantangan kehidupan ke depan.</p>
+                        <p>Taruna/i yang saya cintai, Kalian adalah generasi yang akan menentukan masa depan bangsa. Manfaatkan setiap kesempatan, hirup setiap ilmu, dan jangan pernah berhenti bermimpi serta berusaha.</p>
+                        <p class="italic mt-4 font-medium text-slate-700">Wassalamu’alaikum warahmatullahi wabarakatuh.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="jurusan" class="py-20 px-4 bg-white relative">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-accent font-bold tracking-widest text-sm mb-2 block uppercase">Tentang Kami</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-6 font-serif">Mengenal SMK Al Muttaqin</h2>
+                <p class="text-slate-600 leading-relaxed text-justify md:text-center">
+                    Berdiri pada tahun 2008, SMK Al-Muttaqin hadir sebagai satu-satunya sekolah di kecamatan Dente Teladas yang menggunakan <strong>sistem pendidikan berbasis Taruna</strong>. Kami membekali taruna/i tidak hanya dengan keahlian kejuruan, namun juga kedisiplinan dan karakter. Hingga saat ini, alumni kami telah sukses berkarir, kuliah di luar negeri, hingga meraih beasiswa dari PT CP BAHARI.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
+                    <div class="w-16 h-16 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-primary group-hover:text-white transition">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-3 font-serif">Agribisnis Perikanan Air Tawar</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Mencetak tenaga ahli di bidang pembudidayaan, pembenihan, dan pengelolaan agribisnis perikanan air tawar yang siap kerja di industri akuakultur modern.</p>
+                    <a href="https://youtu.be/7ThLgWYzEwA" target="_blank" class="text-primary font-bold text-sm flex items-center gap-2 hover:text-accent transition">
+                        <i class="fab fa-youtube text-red-500 text-lg"></i> Tonton Profil Jurusan <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
+                    <div class="w-16 h-16 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-primary group-hover:text-white transition">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-3 font-serif">Teknik Komputer Jaringan</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Membekali taruna/i dengan keahlian merakit komputer, instalasi jaringan, administrasi server, hingga troubleshooting perangkat IT standar industri.</p>
+                    <a href="https://youtu.be/UBt_5sn6YLY" target="_blank" class="text-primary font-bold text-sm flex items-center gap-2 hover:text-accent transition">
+                        <i class="fab fa-youtube text-red-500 text-lg"></i> Tonton Profil Jurusan <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kegiatan" class="py-20 px-4 bg-slate-900 text-white relative">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-[100px] opacity-30"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-accent rounded-full blur-[100px] opacity-10"></div>
+
+        <div class="max-w-[1200px] mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <span class="text-accent font-bold tracking-widest text-sm mb-2 block uppercase">Dokumentasi</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold font-serif">Galeri Video Kegiatan</h2>
+                </div>
+                <a href="https://youtube.com/@SMKAlMuttaqin" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-lg font-bold transition flex items-center gap-2 text-sm">
+                    <i class="fab fa-youtube"></i> Subscribe Channel Kami
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-slate-500 transition group">
+                    <div class="relative pt-[56.25%]">
+                        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/fEKZzBNEWVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg mb-1 leading-tight group-hover:text-accent transition">Perpisahan Angkatan 13</h3>
+                        <p class="text-slate-400 text-xs"><i class="fas fa-play-circle mr-1"></i> Dokumentasi Sekolah</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-slate-500 transition group">
+                    <div class="relative pt-[56.25%]">
+                        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/bKgQwgogHVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg mb-1 leading-tight group-hover:text-accent transition">Pakaian Harian Taruna Al Muttaqin</h3>
+                        <p class="text-slate-400 text-xs"><i class="fas fa-play-circle mr-1"></i> Tata Tertib Taruna</p>
+                    </div>
+                </div>
+
+                <a href="https://vt.tiktok.com/ZSFdfC6sP/" target="_blank" class="bg-gradient-to-br from-purple-900 to-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-accent transition group flex flex-col justify-center items-center text-center p-8 relative">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800')] bg-cover bg-center opacity-20 group-hover:opacity-30 transition duration-500"></div>
+                    <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-2xl mb-4 shadow-lg relative z-10 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 relative z-10 text-white">Kegiatan KBM Taruna</h3>
+                    <p class="text-slate-300 text-sm relative z-10">Tonton video selengkapnya di TikTok resmi kami.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-primary">
+        <div class="max-w-[1200px] mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <p class="text-white font-serif text-xl md:text-2xl italic">"Setiap langkah kecil yang kamu ambil saat ini akan membawamu lebih dekat dengan tujuanmu."</p>
+                <div class="w-12 h-1 bg-accent hidden md:block"></div>
+                <div class="flex gap-4">
+                    <a href="https://sites.google.com/view/perpustakaan-almuttaqin" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition flex items-center gap-2">
+                        <i class="fas fa-book-reader text-accent"></i> Pojok Baca
+                    </a>
+                    <a href="http://37.157.242.105:29567/stream" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition flex items-center gap-2">
+                        <i class="fas fa-broadcast-tower text-accent"></i> Radio Streaming
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pengumuman" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold text-primary font-serif">Pengumuman & Berita</h2>
+                    <p class="text-slate-500 text-sm mt-1">Informasi terbaru dari civitas akademika SMK Al Muttaqin</p>
+                </div>
+            </div>
+            
+            <div id="api-pengumuman" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <p class="col-span-full text-center text-slate-400 italic py-10 flex flex-col items-center justify-center">
+                    <i class="fas fa-spinner fa-spin text-3xl text-primary mb-3"></i> Memuat data terbaru...
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 pt-20 pb-10 border-t-4 border-accent">
+        <div class="max-w-[1200px] mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="flex flex-col gap-4">
+                    <h3 class="text-2xl font-black text-white leading-tight tracking-tight flex items-center gap-3">
+                        <i class="fas fa-graduation-cap text-accent"></i> SMK AL MUTTAQIN
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed pr-4">
+                        Menjadi Sekolah yang Unggul, Berkarakter, Berwawasan Lingkungan dan Religius. Mendidik taruna/i tangguh untuk masa depan bangsa.
+                    </p>
+                    <div class="flex flex-col gap-3 mt-4 text-sm text-slate-300">
+                        <span class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-accent mt-1 w-4 text-center"></i> Jl. Bratasena-Pasar Pasiran Jaya, Kec. Dente Teladas, Kab. Tulang Bawang, Lampung 34596</span>
+                        <span class="flex items-center gap-3"><i class="fas fa-phone-alt text-accent w-4 text-center"></i> 0821-8344-648</span>
+                        <span class="flex items-center gap-3"><i class="fas fa-fingerprint text-accent w-4 text-center"></i> NPSN: 10814715 | Akreditasi: C</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6 relative inline-block">
+                        Tautan Penting
+                        <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-accent rounded-full"></span>
+                    </h4>
+                    <ul class="flex flex-col gap-3 text-sm text-slate-400">
+                        <li><a href="#profil" class="hover:text-accent hover:translate-x-1 transition-transform flex items-center gap-2"><i class="fas fa-chevron-right text-[10px]"></i> Profil Sekolah</a></li>
+                        <li><a href="#taruna" class="hover:text-accent hover:translate-x-1 transition-transform flex items-center gap-2"><i class="fas fa-chevron-right text-[10px]"></i> Tata Tertib Taruna</a></li>
+                        <li><a href="#" class="hover:text-accent hover:translate-x-1 transition-transform flex items-center gap-2"><i class="fas fa-chevron-right text-[10px]"></i> Janji Setia Korp</a></li>
+                        <li><a href="#" class="hover:text-accent hover:translate-x-1 transition-transform flex items-center gap-2"><i class="fas fa-chevron-right text-[10px]"></i> Direktori Alumni</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6 relative inline-block">
+                        Akademik
+                        <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-accent rounded-full"></span>
+                    </h4>
+                    <ul class="flex flex-col gap-3 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-accent hover:translate-x-1 transition-transform flex items-center gap-2"><i class="fas fa-chevron-right text-[10px]"></i> Create RPP</a></li>
+                        <li><a href="#" class="hover:text-accent hover:translate-x-1 transition-transform flex items-center gap-2"><i class="fas fa-chevron-right text-[10px]"></i> Pengajuan Surat Izin</a></li>
+                        <li><a href="#jurusan" class="hover:text-accent hover:translate-x-1 transition-transform flex items-center gap-2"><i class="fas fa-chevron-right text-[10px]"></i> Agribisnis Perikanan</a></li>
+                        <li><a href="#jurusan" class="hover:text-accent hover:translate-x-1 transition-transform flex items-center gap-2"><i class="fas fa-chevron-right text-[10px]"></i> Teknik Komputer Jaringan</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6 relative inline-block">
+                        Media Sosial
+                        <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-accent rounded-full"></span>
+                    </h4>
+                    <p class="text-sm text-slate-400 mb-5 leading-relaxed">Ikuti aktivitas keseharian taruna/i kami di jejaring sosial resmi sekolah.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://www.instagram.com/smkalmuttaqin" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 text-white flex items-center justify-center hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 transition shadow-sm hover:-translate-y-1"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@SMKAlMuttaqin" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 text-white flex items-center justify-center hover:bg-red-600 transition shadow-sm hover:-translate-y-1"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@smkalmuttaqin0" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 text-white flex items-center justify-center hover:bg-black transition shadow-sm hover:-translate-y-1"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/ambalan_dipowi" title="Pramuka/Ambalan" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 text-white flex items-center justify-center hover:bg-orange-500 transition shadow-sm hover:-translate-y-1"><i class="fas fa-campground"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-slate-500 font-medium text-center md:text-left">
+                    &copy; <script>document.write(new Date().getFullYear())</script> SMK AL MUTTAQIN TULANG BAWANG. All Rights Reserved.<br>
+                    <span class="opacity-70">Powered By Aisyah Elliya & Siti Maghfiroh</span>
+                </p>
+                <a href="#" class="bg-primary hover:bg-blue-800 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition">
+                    <i class="fas fa-user-lock mr-2"></i> Portal Admin
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Menu Mobile Toggle
+            const btnMobile = document.getElementById('mobile-menu-btn');
+            const menuMobile = document.getElementById('mobile-menu');
+            if(btnMobile && menuMobile) {
+                btnMobile.addEventListener('click', function() {
+                    menuMobile.classList.toggle('hidden');
+                });
+            }
+
+            // Custom Scrollbar Style Injector untuk box sambutan
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+                .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
+                .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+                .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+            `;
+            document.head.appendChild(style);
+
+            // =========================================================================
+            // BOS: BLOK SCRIPT INI ADALAH DUMMY PENGGANTI AGAR TEMPLATE ADMIN JALAN
+            // Ganti URL ini dengan URL Google Apps Script milik SMK Al Muttaqin nanti.
+            // =========================================================================
+            const BASE_API_URL = 'https://script.google.com/macros/s/AKfycbyOgCidAVWi8PnKS2vJ7yfNizYVPVy5QtULRg7a35CYlqJIY2spc805j7QFhpZ6E9la-w/exec'; 
+            
+            // Dummy pemanggil Pengumuman (Bos tinggal hubungkan ke sistem Sheets)
+            async function loadPengumumanDummy() {
+                const container = document.getElementById('api-pengumuman');
+                if(!container) return;
+                
+                // Ini hanya desain Card Pengumuman / Berita
+                const dummyHTML = `
+                <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col hover:shadow-lg transition-shadow h-full">
+                    <div class="bg-blue-50 rounded-lg h-24 flex items-center justify-center mb-5">
+                        <i class="fas fa-bullhorn text-4xl text-primary opacity-50"></i>
+                    </div>
+                    <div class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Info Taruna</div>
+                    <h3 class="text-lg font-bold text-darktext leading-snug mb-2 font-serif">Penerimaan Taruna Baru Gelombang I</h3>
+                    <p class="text-[13px] text-slate-500 mb-5 flex-grow line-clamp-3">Telah dibuka pendaftaran calon Taruna/i SMK Al Muttaqin tahun ajaran baru. Silakan persiapkan berkas fisik dan daftar secara online.</p>
+                    <div class="flex justify-between items-center mt-auto border-t border-gray-100 pt-4">
+                        <span class="text-xs text-slate-400 font-medium"><i class="far fa-calendar-alt"></i> 15 Mei 2026</span>
+                        <a href="#" class="text-primary hover:text-blue-800 text-sm font-bold flex items-center gap-1">Baca <i class="fas fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>`;
+                
+                container.innerHTML = dummyHTML + dummyHTML + dummyHTML + dummyHTML; 
+            }
+            
+            // Panggil Fungsi
+            loadPengumumanDummy();
+        });
+    </script>
+</body>
+</html>
