@@ -524,24 +524,31 @@ Akreditasi : C
                     if (result.status === "success") {
                         container.innerHTML = ''; 
                         result.data.forEach(item => {
-                            // Murni mengambil gambar dari kolom "Link PDF" (Jika bos memasukkan link gambar ke situ) atau "Foto" atau "Link"
-                            // Jika kosong semua, pakai gambar placeholder kegiatan sekolah
-                            const imgUrl = item['Link PDF'] || item.Foto || item.Link || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop'; 
+                            // Mencari link gambar dari berbagai kemungkinan nama kolom
+                            const imgUrl = item.Foto || item.foto || item['Link Foto'] || item['Link PDF'] || item['link pdf'] || item.Gambar || item.Poster || item.Link || item.link || 'https://ik.imagekit.io/maihfdgfn5/gambar.jpg?q=80&w=800&auto=format&fit=crop'; 
+                            const judul = item.Judul || item.judul || 'Informasi Terbaru';
                             
                             const cardHTML = `
-                            <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
+                            <div class="relative rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group h-72 md:h-80 w-full cursor-pointer border border-gray-100" onclick="openPdfModal('${imgUrl}')">
                                 
-                                <div class="relative h-64 md:h-56 w-full overflow-hidden bg-gray-100">
-                                    <img src="${imgUrl}" alt="${item.Judul || 'Pengumuman'}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                                    
-                                    <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-sm text-primary px-3 py-1 rounded text-xs font-bold shadow-sm flex items-center gap-1.5">
-                                        <i class="far fa-calendar-alt"></i> ${item.Tanggal || '-'}
+                                <img src="${imgUrl}" alt="${judul}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                
+                                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="bg-white/20 backdrop-blur-md text-white w-14 h-14 rounded-full flex items-center justify-center border border-white/50 shadow-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                                        <i class="fas fa-search-plus text-2xl"></i>
                                     </div>
                                 </div>
                                 
-                                <div class="p-5 flex flex-col flex-grow bg-white border-t-4 border-accent">
-                                    <h3 class="text-lg font-bold text-darktext leading-snug mb-2 line-clamp-2">${item.Judul || 'Informasi Terbaru'}</h3>
-                                    <p class="text-[13px] text-gray-500 flex-grow line-clamp-3">${item.Ringkasan || 'Tidak ada deskripsi tambahan.'}</p>
+                                ${item.Tanggal ? `
+                                <div class="absolute top-4 right-4 bg-accent text-darktext px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest shadow-lg">
+                                    ${item.Tanggal}
+                                </div>` : ''}
+                                
+                                <div class="absolute bottom-0 left-0 right-0 p-5 flex flex-col justify-end transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                    <div class="w-8 h-1 bg-accent mb-3 rounded-full"></div>
+                                    <h3 class="text-white text-lg font-bold leading-tight line-clamp-2 drop-shadow-md">${judul}</h3>
                                 </div>
                                 
                             </div>`;
